@@ -1,0 +1,80 @@
+body {
+  background-color: #f7fcb1;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h1 {
+  font-weight: bold;
+  color: #3b3b3b;
+}
+
+/* CARRUSEL */
+.carousel-inner {
+  max-height: 300px;
+}
+
+.carousel-inner img {
+  height: 240px;
+  object-fit: contain;
+}
+
+
+.carousel-item h5,
+.carousel-item p {
+  color: #000;
+}
+
+
+.carousel-caption {
+  background: none;         /* Elimina el fondo gris */
+  padding: 8px 16px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7); /* Mejora la legibilidad */
+}
+
+.carousel-caption-bottom {
+  padding: 12px;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  font-weight: 500;
+}
+
+.carousel-caption-bottom h5 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.carousel-caption-bottom p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+
+/* TARJETAS */
+.card.producto {
+  background-color: #fffbe6;
+  border: 1px solid #ffd;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card.producto img {
+  height: 200px;
+  object-fit: contain;
+}
+
+/* BOTONES */
+.btn-success {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.btn-warning {
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+
+.btn-primary {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}

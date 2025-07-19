@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Listado de Productos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">🎵 Tienda Musical "MON-BAR"</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Productos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container py-5">
+  <h1 class="mb-4 text-center text-dark">🎶 Listado de Productos Musicales 🎶</h1>
+
+  <!-- Carrusel corregido -->
+  <div id="carouselMonBar" class="carousel slide carousel-fade mb-5" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselMonBar" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#carouselMonBar" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#carouselMonBar" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#carouselMonBar" data-bs-slide-to="3"></button>
+      <button type="button" data-bs-target="#carouselMonBar" data-bs-slide-to="4"></button>
+      <button type="button" data-bs-target="#carouselMonBar" data-bs-slide-to="5"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="d-flex flex-column align-items-center">
+          <img src="img/bajo_electrico_fender.jpg" class="d-block w-100" alt="Bajo Fender">
+          <div class="carousel-caption-bottom text-center">
+            <h5>Bajo Eléctrico Fender</h5>
+            <p>Potencia y presencia en cada nota grave.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="d-flex flex-column align-items-center">
+          <img src="img/bateria_premier.jpg" class="d-block w-100" alt="Batería Premier">
+          <div class="carousel-caption-bottom text-center">
+            <h5>Batería Premier</h5>
+            <p>Perfecta para ensayos y conciertos.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="d-flex flex-column align-items-center">
+          <img src="img/piano_yamaha.jpg" class="d-block w-100" alt="Piano Yamaha">
+          <div class="carousel-caption-bottom text-center">
+            <h5>Piano Yamaha</h5>
+            <p>Sonido profesional para escenarios exigentes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="d-flex flex-column align-items-center">
+          <img src="img/microfono_shure.jpg" class="d-block w-100" alt="Micrófono Shure">
+          <div class="carousel-caption-bottom text-center">
+            <h5>Micrófono Shure</h5>
+            <p>Claridad para voz y grabaciones en vivo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="d-flex flex-column align-items-center">
+          <img src="img/guiro_merenguero.jpg" class="d-block w-100" alt="Güiro Merenguero">
+          <div class="carousel-caption-bottom text-center">
+            <h5>Güiro Merenguero</h5>
+            <p>Perfecto para ritmos tropicales.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="d-flex flex-column align-items-center">
+          <img src="img/guitarra_electrica_fender.jpg" class="d-block w-100" alt="Guitarra Fender">
+          <div class="carousel-caption-bottom text-center">
+            <h5>Guitarra Eléctrica Fender</h5>
+            <p>Sonido versátil y diseño clásico.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselMonBar" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselMonBar" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- Contenedor de productos cargados por JavaScript -->
+  <div class="row" id="product-container"></div>
+
+  <div class="text-center my-4">
+    <button onclick="addProduct()" class="btn btn-success">➕ Agregar Producto</button>
+    <button onclick="mostrarAlerta()" class="btn btn-warning ms-2">🔔 Mostrar Alerta</button>
+  </div>
+
+  <!-- Formulario -->
+  <div class="card p-4 mb-5">
+    <h5 class="mb-3">Formulario de Contacto</h5>
+    <form id="contact-form">
+      <div class="row g-3">
+        <div class="col-md-4"><input type="text" id="nombre" class="form-control" placeholder="Nombre"></div>
+        <div class="col-md-4"><input type="email" id="correo" class="form-control" placeholder="Correo Electrónico"></div>
+        <div class="col-md-4"><input type="text" id="mensaje" class="form-control" placeholder="Mensaje"></div>
+      </div>
+      <div class="text-end mt-3">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<footer class="bg-dark text-white text-center py-3">
+  <p class="mb-2">© 2025 Tienda Musical "MON-BAR". Síguenos en nuestras redes sociales.</p>
+  <div>
+    <a href="https://facebook.com" target="_blank" class="text-white me-3"><i class="bi bi-facebook fs-4"></i></a>
+    <a href="https://twitter.com" target="_blank" class="text-white me-3"><i class="bi bi-twitter fs-4"></i></a>
+    <a href="https://instagram.com" target="_blank" class="text-white me-3"><i class="bi bi-instagram fs-4"></i></a>
+    <a href="https://tiktok.com" target="_blank" class="text-white"><i class="bi bi-tiktok fs-4"></i></a>
+  </div>
+</footer>
+
+<!-- Bootstrap y JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

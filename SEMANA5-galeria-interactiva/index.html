@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Validación y Galería Mejorada</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+
+  <div class="section">
+    <h1>Texto</h1>
+    <button onclick="alert('Texto aceptado')">Aceptar</button>
+  </div>
+
+  <div class="section">
+    <h2>Validar números</h2>
+    <input type="text" id="numInput" placeholder="Escribe un número">
+    <button onclick="validarNumero()">Validar</button>
+    <div id="resultadoValidacion" class="resultado"></div>
+  </div>
+
+  <div class="section">
+    <h2>Galería Interactiva</h2>
+    <div class="controls">
+      <input type="url" id="imageURL" placeholder="Ingresa la URL de la imagen">
+      <button id="addImageBtn">Agregar Imagen</button>
+      <button id="removeImageBtn">Eliminar Imagen Seleccionada</button>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
